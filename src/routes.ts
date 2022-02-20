@@ -1,9 +1,14 @@
-import {Router} from "express";
-import {AuthenciatedUser, Login, Register} from "./controller/auth.controller";
+import { Router } from 'express';
+import {
+    AuthenciatedUser,
+    Login,
+    Refresh,
+    Register,
+} from './controller/auth.controller';
 
-export const routes = (router: Router) =>
-{
-  router.post('/api/register', Register);
-  router.post('/api/login', Login);
-  router.get('/api/user', AuthenciatedUser);
+export const routes = (router: Router) => {
+    router.post('/api/register', Register);
+    router.post('/api/login', Login);
+    router.get('/api/user', AuthenciatedUser);
+    router.post('/api/refresh', Refresh);
 };
